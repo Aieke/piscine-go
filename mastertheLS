@@ -1,1 +1,1 @@
-ls -p -m -t || sed 's/ / /g'
+ls -p -m -t | sed 's/ //g'
