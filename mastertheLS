@@ -1,1 +1,5 @@
-ls -all -m -lct || tr '/' 
+ls
+ls -p
+ls -m
+ls -t
+sed 's/ / /g'
