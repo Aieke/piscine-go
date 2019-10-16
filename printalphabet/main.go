@@ -10,6 +10,5 @@ func main() {
 
 		z01.PrintRune(lower)
 		lower++
-
-	}
+    	}
 }
