@@ -2,14 +2,14 @@ package main
 
 import "fmt" 
 
-func main(){
+func main() {
 	var lower ='a'
 
-	for lower<='z'{
+	for lower <= 'z' {
 	
 
-	fmt.Print(string(lower))
-	lower++
+		fmt.Print(string(lower))
+		lower++
 	}
 }
 
