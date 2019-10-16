@@ -1,6 +1,6 @@
 package main
 
-import "fmt" 
+import "github.com/01-edu/z01" 
 
 func main() {
 
@@ -8,8 +8,8 @@ func main() {
 
 	for lower <= 'z' {
 
-		fmt.Print(string(lower))
+		z01.PrintRune(lower)
 		lower++
-		
+
 	}
 }
