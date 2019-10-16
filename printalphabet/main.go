@@ -7,7 +7,7 @@ func main() {
     for lower <= 'z' {
         z01.PrintRune(lower)
         lower++
-		}
+	}
 	z01.PrintRune('\n')
 
 }
