@@ -13,6 +13,7 @@ func PrintComb() {
 				if i != 55 || j != 56 || k != 57 {
 					z01.PrintRune(44)
 					z01.PrintRune(32)
+					z01.PrintRune(10)
 				}
 			}
 		}
