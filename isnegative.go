@@ -11,7 +11,7 @@ func main() {
 	z01.PrintRune('\n')
 }
 
-func isNegative(nb int) {
+func IsNegative(nb int) {
 	if nb >= 0 {
 		z01.PrintRune('F')
 	} else {
