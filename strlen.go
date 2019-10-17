@@ -3,7 +3,7 @@ package piscine
 func StrLen(str string) int {
 	strRune := []rune(str)
 	nb := 0
-	for i := range strRune {
+	for _ := range strRune {
 		nb++
 	}
 	return nb
