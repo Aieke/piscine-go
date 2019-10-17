@@ -1,6 +1,6 @@
 package piscine
 
-func Swap(s string) string {
+func StrRev(s string) string {
 	n := len(s)
 	runes := make([]rune, n)
 	for _, rune := range s {
