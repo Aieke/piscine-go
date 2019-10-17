@@ -6,4 +6,5 @@ func StrLen(str string) int {
 	for i := range strRune {
 		nb++
 	}
+	return
 }
