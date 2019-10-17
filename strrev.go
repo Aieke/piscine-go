@@ -1,11 +1,16 @@
 package piscine
 
 func StrRev(s string) string {
-	n := len(s)
-	runes := make([]rune, n)
-	for _, rune := range s {
-		n--
-		runes[n] = rune
+	normalString := []rune(s)
+	revString := []rune(s)
+
+	var a int
+	for i := range normalString {
+		a = i
 	}
-	return string(runes[n:])
+	for i := range revString {
+		revString[i] = normalString[a]
+		a--
+	}
+	return string(revString)
 }
