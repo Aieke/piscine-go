@@ -1,1 +1,1 @@
-ls -1 | sed -e 's/\..*$//'
+find . -name "*.sh" | sed "s:test::g" | sed "s:sh::g" | sed "s:/::g" | cut -d '.' -f2
