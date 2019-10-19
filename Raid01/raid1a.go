@@ -6,18 +6,18 @@ import (
 
 func Raid1a(x, y int) {
 	if x > 0 && y > 0 {
-		if y > 0 && y < 3 {
+		if 0 < y && y < 3 {
 			for j := 0; j < y; j++ {
-				SecondExample(x, y)
+				Example(x)
 				z01.PrintRune(10)
 			}
 		} else {
 			for j := 1; j <= y; j++ {
 				if j == 1 || j == y {
-					SecondCheckLastOrFirstY(x, j)
+					Example(x)
 					z01.PrintRune(10)
 				} else {
-					SecondCheckY(x)
+					CheckY(x)
 					z01.PrintRune(10)
 				}
 			}
@@ -25,50 +25,30 @@ func Raid1a(x, y int) {
 	}
 }
 
-func SecondExample(x, y int) {
+func Example(x int) {
 	if 0 < x && x < 3 {
 		for i := 0; i < x; i++ {
-			z01.PrintRune('o')
+			z01.PrintRune(111)
 		}
 	} else {
 		for i := 1; i <= x; i++ {
-			if i == 1 && i == y {
-				z01.PrintRune('o')
-			} else if i == x && i == 1 {
-				z01.PrintRune('o')
-			} else if i == 1 {
-				z01.PrintRune('o')
-			} else if i == x {
-				z01.PrintRune('o')
+			if i == 1 || i == x {
+				z01.PrintRune(111)
 			} else {
 				z01.PrintRune(45)
 			}
+
 		}
 	}
 }
 
-func SecondCheckY(x int) {
+func CheckY(x int) {
+
 	for i := 1; i <= x; i++ {
 		if i == 1 || i == x {
-			z01.PrintRune('|')
+			z01.PrintRune(124)
 		} else {
 			z01.PrintRune(32)
-		}
-	}
-}
-
-func SecondCheckLastOrFirstY(x, y int) {
-	for i := 1; i <= x; i++ {
-		if i == 1 && y != 1 {
-			z01.PrintRune('o')
-		} else if i == x && y != 1 {
-			z01.PrintRune('o')
-		} else if i == 1 && y == 1 {
-			z01.PrintRune('o')
-		} else if i == x && y == 1 {
-			z01.PrintRune('o')
-		} else {
-			z01.PrintRune(45)
 		}
 	}
 }
