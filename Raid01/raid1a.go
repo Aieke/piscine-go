@@ -23,8 +23,8 @@ func Raid1a(x, y int) {
 			}
 		}
 	}
-
 }
+
 func SecondExample(x, y int) {
 	if 0 < x && x < 3 {
 		for i := 0; i < x; i++ {
@@ -46,6 +46,7 @@ func SecondExample(x, y int) {
 		}
 	}
 }
+
 func SecondCheckY(x int) {
 	for i := 1; i <= x; i++ {
 		if i == 1 || i == x {
@@ -55,6 +56,7 @@ func SecondCheckY(x int) {
 		}
 	}
 }
+
 func SecondCheckLastOrFirstY(x, y int) {
 	for i := 1; i <= x; i++ {
 		if i == 1 && y != 1 {
