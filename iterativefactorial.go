@@ -1,4 +1,4 @@
-package student
+package piscine
 
 func IterativeFactorial(nb int) int {
 	fact := 1
