@@ -1,19 +1,22 @@
 package piscine
 
+// Index function returns the index of the first
+// instance of 'toFind' in s string, or -1
+// if sub-string is not present in s.
 func Index(s string, toFind string) int {
 	substr := []rune(toFind)
 	str := []rune(s)
 
 	lenstr := 0
-
 	for i := range str {
 		lenstr = i + 1
 	}
-	lensubstr := 0
 
+	lensubstr := 0
 	for j := range substr {
 		lensubstr = j + 1
 	}
+
 	switch {
 	case lensubstr == 0:
 		return 0
@@ -39,7 +42,7 @@ func Index(s string, toFind string) int {
 				}
 				i += o
 			}
-			if str[i+1] == c1 && s[i:1+lensubstr] == toFind {
+			if str[i+1] == c1 && s[i:i+lensubstr] == toFind {
 				return i
 			}
 			i++
@@ -47,13 +50,16 @@ func Index(s string, toFind string) int {
 	}
 	return -1
 }
+
+// IndexRune function returns the index of
+// the first occurrence of a rune in a given string.
 func IndexRune(s []rune, r rune) int {
-	IndexRune := -1
+	indexrune := -1
 	for i := range s {
 		if s[i] == r {
-			IndexRune = i
-			return IndexRune
+			indexrune = i
+			return indexrune
 		}
 	}
-	return IndexRune
+	return indexrune
 }
