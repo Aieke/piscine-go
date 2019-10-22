@@ -4,7 +4,12 @@ func Capitalize(s string) string {
 
 	strRuness := []rune(s)
 
-	for i := 0; i < len(s); i++ {
+	lenStr := 0
+	for i := range strRuness {
+		lenStr = i + 1
+	}
+
+	for i := 0; i < lenStr; i++ {
 
 		if strRuness[i] == 32 || strRuness[i] == '+' {
 			i++
