@@ -1,12 +1,6 @@
-package main
+package student
 
 import "github.com/01-edu/z01"
-
-func main() {
-	PrintNbrInOrder(321)
-	PrintNbrInOrder(0)
-	PrintNbrInOrder(321)
-}
 
 func SortIntegerTable(table []int) []int {
 	size := len(table)
