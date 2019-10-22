@@ -1,14 +1,12 @@
 package piscine
 
-import "github.com/01-edu/z01"
-
 func TrimAtoi(s string) int {
 	if s == "" {
 		return 0
 	}
 	x := 0
 	k := 1
-	s1 := AlphaCount(s)
+	s1 := AlphaCount2(s)
 
 	if s != "" {
 		for i, n := range s1 {
@@ -34,7 +32,7 @@ func TrimAtoi(s string) int {
 	}
 	return x * k
 }
-func AlphaCount(str string) []rune {
+func AlphaCount2(str string) []rune {
 	len := 0
 	var res []rune
 	var final []rune
