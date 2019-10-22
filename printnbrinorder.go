@@ -1,45 +1,52 @@
 package student
 
-import "github.com/01-edu/z01"
+import (
+	"github.com/01-edu/z01"
+)
 
 func SortIntegerTable(table []int) []int {
-	size := len(table)
-	if size < 2 {
-		return table
+	sort := false
+	var b int
+	for i := range table {
+		b = i
 	}
-	for i := 0; i < size; i++ {
-		for j := size - 1; j >= i+1; j-- {
-			if table[j] < table[j-1] {
-				var temp = table[j]
-				table[j] = table[j-1]
-				table[j-1] = temp
+	b = b + 1
+	for !sort {
+		swap := false
+		for i := 0; i < b-1; i++ {
+			if table[i+1] < table[i] {
+				table[i+1], table[i] = table[i], table[i+1]
+				swap = true
 			}
+		}
+		if !swap {
+			sort = true
 		}
 	}
 	return table
 }
-func toArray(n int) []int {
-	var result []int
+
+func ToMassive(n int) []int {
+	var res []int
 	for n > 0 {
 		if n == 0 {
-			result = append(result, n)
+			res = append(res, n)
 		} else {
 			a := n % 10
-			result = append(result, a)
+			res = append(res, a)
 		}
 		n = n / 10
 	}
-	return result
+	return res
 }
 
 func PrintNbrInOrder(n int) {
 	if n < 0 {
-
 	} else if n == 0 {
 		z01.PrintRune('0')
 	} else {
 		mod := '0'
-		for _, i := range SortIntegerTable(toArray(n)) {
+		for _, i := range SortIntegerTable(ToMassive(n)) {
 			for k := 0; k < i; k++ {
 				mod++
 			}
