@@ -1,26 +1,27 @@
 package piscine
 
 func Capitalize(s string) string {
+	runes := []rune(s)
 
-	strRuness := []rune(s)
-
-	lenStr := 0
-	for i := range strRuness {
-		lenStr = i + 1
+	strlen := 0
+	for i := range runes {
+		strlen = i + 1
 	}
 
-	for i := 0; i < lenStr; i++ {
-
-		if strRuness[i] == 32 || strRuness[i] == '+' {
-			i++
-			if i != 0 && (!((strRuness[i-1] >= 'a' && strRuness[i-1] <= 'z') || (strRuness[i-1] >= 'A' && strRuness[i-1] <= 'Z') || (strRuness[i-1] >= '0' && strRuness[i-1] <= '9'))) {
-				if strRuness[i] >= 'a' && strRuness[i] <= 'z' {
-					strRuness[i] = rune(s[i] - 32)
-					continue
-				}
+	for i := 0; i < strlen; i++ {
+		if i != 0 && (!((runes[i-1] >= 'a' && runes[i-1] <= 'z') || (runes[i-1] >= 'A' && runes[i-1] <= 'Z') || (runes[i-1] >= '0' && runes[i-1] <= '9'))) {
+			if runes[i] >= 'a' && runes[i] <= 'z' {
+				runes[i] = rune(runes[i] - 32)
+			}
+		} else if i == 0 {
+			if runes[i] >= 'a' && runes[i] <= 'z' {
+				runes[i] = rune(runes[i] - 32)
+			}
+		} else {
+			if runes[i] >= 'A' && runes[i] <= 'Z' {
+				runes[i] = rune(runes[i] + 32)
 			}
 		}
-
 	}
-	return string(strRuness)
+	return string(runes)
 }
