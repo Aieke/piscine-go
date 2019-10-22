@@ -13,9 +13,11 @@ func Capitalize(s string) string {
 
 		if strRuness[i] == 32 || strRuness[i] == '+' {
 			i++
-			if strRuness[i] >= 'a' && strRuness[i] <= 'z' || strRuness[i] >= 'A' && strRuness[i] <= 'Z' || strRuness[i] >= '0' && strRuness[i] <= '9' {
-				strRuness[i] = rune(s[i] - 32)
-				continue
+			if i != 0 && (!((runes[i-1] >= 'a' && runes[i-1] <= 'z') || (runes[i-1] >= 'A' && runes[i-1] <= 'Z') || (runes[i-1] >= '0' && runes[i-1] <= '9'))) {
+				if strRuness[i] >= 'a' && strRuness[i] <= 'z' {
+					strRuness[i] = rune(s[i] - 32)
+					continue
+				}
 			}
 		}
 
