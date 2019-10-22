@@ -1,14 +1,5 @@
-package main
+package piscine
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Println(Index("Hello!", "l"))
-	fmt.Println(Index("Salut!", "alu"))
-	fmt.Println(Index("Ola!", "hOl"))
-}
 func Index(s string, toFind string) int {
 	substr := []rune(toFind)
 	str := []rune(s)
