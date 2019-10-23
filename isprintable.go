@@ -8,7 +8,7 @@ func IsPrintable(str string) bool {
 		strLen = i + 1
 	}
 	for i := 0; i < strLen; i++ {
-		if !(runes[i] >= 'A' && runes[i] <= 'Z' || runes[i] >= 'a' && runes[i] <= 'z') {
+		if runes[i] >= 1 && runes[i] <= 31 {
 			return false
 		}
 	}
