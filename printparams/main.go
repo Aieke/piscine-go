@@ -7,11 +7,17 @@ import (
 
 func main() {
 	arguments := os.Args
-	n := len(arguments)
-	for i := 1; i < n; i++ {
+
+	for i := 1; i < argLen(arguments); i++ {
 		for _, letter := range arguments[i] {
 			z01.PrintRune(letter)
 		}
 		z01.PrintRune(10)
+	}
+}
+func argLen(arguments []string) {
+	argLength := 0
+	for i := range arguments {
+		argLength = i + 1
 	}
 }
