@@ -15,9 +15,10 @@ func main() {
 		z01.PrintRune(10)
 	}
 }
-func argLen(arguments []string) {
+func argLen(arguments []string) int {
 	argLength := 0
 	for i := range arguments {
 		argLength = i + 1
 	}
+	return argLength
 }
