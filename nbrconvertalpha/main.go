@@ -68,7 +68,7 @@ func BasicAtoi(s string) int {
 			answer = 0
 		} else {
 			ten := 1
-			for j := 0; j < length-1; j++ {
+			for j := i; j < length-1; j++ {
 				ten = ten * 10
 			}
 			answer = answer + chartoint(str[i])*ten
