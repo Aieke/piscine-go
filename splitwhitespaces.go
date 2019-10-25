@@ -1,36 +1,45 @@
 package piscine
 
+// SplitWhiteSpaces function separates the words of a string
+// and puts them in a string array.
+// The separators are spaces, tabs and newlines.
 func SplitWhiteSpaces(str string) []string {
-	len := 0
-	len2 := 0
-	for _, i := range str {
-		if i == ' ' || i == '\t' || i == '\n' {
-			len++
-		}
-	}
+	size := 1
+	var result []string
+	lenstr := 0
 	for i := range str {
-		len2 = i
+		lenstr = i + 1
 	}
-	res := make([]string, len+1)
-	temp := ""
-	check := true
-	k := 0
-	for i := 0; i <= len2; i++ {
-		if i == len2 {
-			temp += string(str[i])
-			res[k] = temp
-		} else if str[i] == ' ' || str[i] == '\t' || str[i] == '\n' {
-			res[k] = temp
-			temp = ""
-			check = false
-			if !check {
-				k++
+
+	for i := 0; i < lenstr-1; i++ {
+		if str[i] == ' ' || str[i] == '\t' || str[i] == '\n' {
+			size++
+			if i > 0 {
+				if str[i-1] == ' ' || str[i-1] == '\t' || str[i-1] == '\n' {
+					size--
+				}
 			}
-			check = true
-			continue
-		} else {
-			temp += string(str[i])
 		}
 	}
-	return res
+
+	result = make([]string, size)
+
+	tempstr := ""
+	j := 0
+	for i := 0; i <= lenstr; i++ {
+		if i == lenstr {
+			if tempstr != "" {
+				result[j] = tempstr
+			}
+		} else if str[i] != ' ' && str[i] != '\t' && str[i] != '\n' {
+			tempstr = tempstr + string(str[i])
+		} else {
+			if tempstr != "" {
+				result[j] = tempstr
+				j++
+			}
+			tempstr = ""
+		}
+	}
+	return result
 }
